@@ -28,10 +28,9 @@ class Server:
         """return list of page content"""
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
-        page_range = index_range(page, page_size)
+        start, end = index_range(page, page_size)
         data = self.dataset()
         ret = []
-        if len(data) > page_range[0]:
-            ret = [data[i] for i in range(page_range[0],
-                                          min(page_range[1], len(data)))]
+        if len(data) > start:
+            ret = data[start:end]
         return ret
