@@ -31,6 +31,6 @@ class Server:
         page_range = index_range(page, page_size)
         data = self.dataset()
         ret = []
-        if len(data) > page_range[1]:
-            ret = [data[i] for i in range(page_range[0], page_range[1])]
+        if len(data) > page_range[0]:
+            ret = [data[i] for i in range(page_range[0], min(page_range[1], len(data)))]
         return ret
