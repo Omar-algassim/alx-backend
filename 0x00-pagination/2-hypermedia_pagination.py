@@ -35,7 +35,8 @@ class Server:
         return data[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
-        """functoin return information about page like page_size and number etc.."""
+        """functoin return information about page like
+        page_size and number etc.."""
         dataset = self.dataset()
         data = self.get_page(page, page_size)
         next_page = page + 1
