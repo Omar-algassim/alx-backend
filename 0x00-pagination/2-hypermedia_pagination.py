@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import math
-from typing import List
+from typing import List, Dict
 index_range = __import__('0-simple_helper_function').index_range
 
 
@@ -34,7 +34,7 @@ class Server:
             return []
         return data[start:end]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """functoin return information about page like
         page_size and number etc.."""
         dataset = self.dataset()

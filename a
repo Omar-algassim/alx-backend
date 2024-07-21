@@ -1,0 +1,65 @@
+[33mcommit 3c39692d5b8e87ca6a24f17ec2c3dbf6cb2c10cf[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:46:53 2024 +0300
+
+    start from 0
+
+[33mcommit 39963c5f97062f85349f6854cc11cebbbb57e5ac[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:44:44 2024 +0300
+
+    fix out of range condition
+
+[33mcommit 9928a9402effecc0992c6867b8006ccc482f223c[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:42:15 2024 +0300
+
+    handel if the slice less then the page range
+
+[33mcommit cb15a2434fa1e933c86eea4fddf2954e8024f9ba[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:36:20 2024 +0300
+
+    pycodestyle fix
+
+[33mcommit d19acbee8622856988434a4a6c3afe76f6b6bbbb[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:35:23 2024 +0300
+
+    handel if the slice less then the page range
+
+[33mcommit 9be92e9d52219d4abbef21128e8dadae9ef29a30[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:25:46 2024 +0300
+
+    Update assert conditions in get_page method
+
+[33mcommit fc6b8ef2f6e1cc3b3554a0ce3f360c53a3f6f1c3[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:22:10 2024 +0300
+
+    handle if page = 0
+
+[33mcommit 92d1a49150127179499b2fa30bfcb8a0b8e78f76[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 15:17:18 2024 +0300
+
+    impelemnt get_page function in server class
+
+[33mcommit 7d8142eeb0f9b1fd03f4adbc092edf81a70d2fa3[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 14:50:18 2024 +0300
+
+    fix shebang
+
+[33mcommit b7d17eb4a96fab76800bcf6f95451c4c9f4ca740[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 14:49:45 2024 +0300
+
+    impelment index range function
+
+[33mcommit ab9e9f22a9ee1f135ebb983d1378b972228e94e6[m
+Author: Omar-Algassim <omarggg2@gamil.com>
+Date:   Sat Jul 20 14:48:58 2024 +0300
+
+    README
