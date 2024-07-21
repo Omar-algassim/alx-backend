@@ -4,10 +4,20 @@ import math
 from typing import List, Tuple
 
 
-def index_range(page: int, page_size: int) -> Tuple:
-    """return the page range crosponding on pag number and size"""
-    return (((page * page_size) - page_size, page * page_size))
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """Calculates the start and end indexes given the page and page size
 
+    Args:
+        page (int): The page number(1-indexed, the first page is page 1.)
+        page_size (int): The page size
+    Returns:
+        a tuple of size two containing a start index and an end index
+        corresponding to the range of indexes to return in a list for
+        those particular pagination parameters
+    """
+    start = (page - 1) * page_size
+    end = start + page_size
+    return (start, end)
 
 class Server:
     """Server class to paginate a database of popular baby names.
