@@ -3,7 +3,6 @@
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-
 class LIFOCache(BaseCaching):
     """FIFO cache system"""
     def __init__(self):
