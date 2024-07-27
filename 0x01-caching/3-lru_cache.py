@@ -1,25 +1,40 @@
 #!/usr/bin/env python3
-"""FIFO caching"""
-BaseCaching = __import__('base_caching').BaseCaching
+'''Task 3: LRU Caching
+'''
 
 
-class FIFOCache(BaseCaching):
-    """FIFO cache system"""
+from collections import OrderedDict
+from base_caching import BaseCaching
+
+
+class LRUCache(BaseCaching):
+    '''A class `LRUCache` that inherits from
+       `BaseCaching` and is a caching system
+    '''
+
     def __init__(self):
-        """initialize"""
+        '''initialize the cache
+        '''
         super().__init__()
+        self.cache_data = OrderedDict()
 
     def put(self, key, item):
-        """put item in cache memory"""
-        if not key or not item:
+        """Adds an item in the cache.
+        """
+        if key is None or item is None:
             return
-        key_list = [*self.cache_data.keys()]
-        if len(self.cache_data) >= self.MAX_ITEMS\
-                and key not in self.cache_data:
-            self.cache_data.pop(key_list[0])
-            print(f"DISCARD: {key_list[0]}")
-        self.cache_data[key] = item
+        if key not in self.cache_data:
+            if len(self.cache_data) + 1 > BaseCaching.MAX_ITEMS:
+                lru_key, _ = self.cache_data.popitem(True)
+                print("DISCARD:", lru_key)
+            self.cache_data[key] = item
+            self.cache_data.move_to_end(key, last=False)
+        else:
+            self.cache_data[key] = item
 
     def get(self, key):
-        """get item from cache"""
-        return self.cache_data.get(key)
+        """Retrieves an item by key.
+        """
+        if key is not None and key in self.cache_data:
+            self.cache_data.move_to_end(key, last=False)
+        return self.cache_data.get(key, None)
