@@ -15,6 +15,7 @@ app = Flask(__name__)
 babel = Babel(app)
 app.config.from_object(Config)
 
+
 @app.route('/')
 def basic():
     """basic rote 'hello world'"""
