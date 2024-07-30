@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Flask app"""
-from flask import render_template, Flask, request, g
-from flask_babel import Babel
 from typing import Dict, Union
+from flask_babel import Babel
+from flask import render_template, Flask, request, g
 
 
 class Config:
@@ -24,13 +24,14 @@ users = {
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
 
+
 def get_user() -> Union[Dict, None]:
     """return user dictionary"""
-    ID = request.args.get('login_as')
-    ID = int(ID)
-    if not ID:
+    id = request.args.get('login_as')
+    id = int(id)
+    if not id:
         return None
-    return users[ID] if ID in users.keys() else None
+    return users[id] if id in users else None
 
 
 @babel.localeselector
@@ -41,10 +42,12 @@ def get_locale() -> str:
         return locale
     return request.accept_languages.best_match(Config.LANGUAGES)
 
+
 @app.before_request
 def before_request():
     """register user to global user"""
     g.user = get_user()
+
 
 @app.route('/')
 def basic() -> str:
