@@ -44,7 +44,7 @@ def get_locale() -> str:
 
 
 @app.before_request
-def before_request():
+def before_request() -> None:
     """register user to global user"""
     g.user = get_user()
 
