@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Flask app"""
 from flask import render_template, Flask
-from flask_babel import Babel, request
+from flask_babel import Babel, request, gettext
 
 
 class Config():
@@ -25,7 +25,9 @@ def get_locale():
 @app.route('/')
 def basic():
     """basic rote 'hello world'"""
-    return render_template('0-index.html')
+    title = gettext('home_title')
+    header = gettext('home_header')
+    return render_template('3-index.html', title=title, header=header)
 
 
 if __name__ == '__main__':
