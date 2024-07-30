@@ -25,9 +25,7 @@ def get_locale():
 @app.route('/')
 def basic():
     """basic rote 'hello world'"""
-    title = gettext('home_title')
-    header = gettext('home_header')
-    return render_template('3-index.html', title=title, header=header)
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
