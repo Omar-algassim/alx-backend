@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Flask app"""
 from flask import render_template, Flask
-from flask_babel import Babel, request, gettext
+from flask_babel import Babel, request
 
 
-class Config():
+class Config:
     """config class"""
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = 'en'
