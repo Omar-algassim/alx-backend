@@ -28,18 +28,25 @@ users = {
 def get_user() -> Union[Dict, None]:
     """return user dictionary"""
     user_id = request.args.get('login_as')
-    user_id = int(user_id)
     if not user_id:
         return None
+    user_id = int(user_id)
     return users[user_id] if user_id in users else None
 
 
 @babel.localeselector
 def get_locale() -> str:
     """get best match languge"""
-
     locale = request.args.get('locale')
-    if locale in Config.LANGUAGES:
+    if locale and locale in Config.LANGUAGES:
+        return locale
+    user = get_user()
+    if user:
+        locale = user.get('locale')
+        if locale and locale in Config.LANGUAGES:
+            return locale
+    locale = request.headers.get('locale')
+    if locale and locale in Config.LANGUAGES:
         return locale
     return request.accept_languages.best_match(Config.LANGUAGES)
 
@@ -53,7 +60,7 @@ def before_request() -> None:
 @app.route('/')
 def basic() -> str:
     """basic rote 'hello world'"""
-    return render_template('5-index.html')
+    return render_template('6-index.html')
 
 
 if __name__ == '__main__':
