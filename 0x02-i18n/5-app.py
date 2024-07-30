@@ -27,11 +27,11 @@ users = {
 
 def get_user() -> Union[Dict, None]:
     """return user dictionary"""
-    id = request.args.get('login_as')
-    id = int(id)
-    if not id:
+    user_id = request.args.get('login_as')
+    user_id = int(id)
+    if not user_id:
         return None
-    return users[id] if id in users else None
+    return users[user_id] if user_id in users else None
 
 
 @babel.localeselector
