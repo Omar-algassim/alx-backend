@@ -28,7 +28,7 @@ users = {
 def get_user() -> Union[Dict, None]:
     """return user dictionary"""
     user_id = request.args.get('login_as')
-    user_id = int(id)
+    user_id = int(user_id)
     if not user_id:
         return None
     return users[user_id] if user_id in users else None
@@ -56,4 +56,4 @@ def basic() -> str:
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
