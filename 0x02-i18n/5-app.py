@@ -37,7 +37,6 @@ def get_user() -> Union[Dict, None]:
 @babel.localeselector
 def get_locale() -> str:
     """get best match languge"""
-
     locale = request.args.get('locale')
     if locale in Config.LANGUAGES:
         return locale
